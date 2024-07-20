@@ -16,6 +16,7 @@ func _process(delta):
 		"/": ans = float(num1/num2)
 		"+": ans = float(num1+num2)
 		"-": ans = float(num1-num2)
+		"^": ans = float(num1**num2)
 		" ": pass
 	$ans.text = str(ans)
 
@@ -33,3 +34,13 @@ func _on_sub_button_up():
 
 func _on_mult_2_button_up():
 	get_tree().quit()
+
+func _on_small_button_up():
+	get_window().size = get_window().size - Vector2i(30, 30)
+
+func _on_large_button_up():
+	get_window().size = get_window().size + Vector2i(30, 30)
+
+
+func _on_exponent_button_up():
+	op = "^"
